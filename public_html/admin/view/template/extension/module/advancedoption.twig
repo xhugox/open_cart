@@ -1,0 +1,437 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <div class="pull-right">
+		<button onclick="$('.stay').val(1);" type="submit" form="form-advoption" data-toggle="tooltip" title="{{ button_save }} & stay" class="btn btn-success"><i class="fa fa-save"></i> {{ button_save }} & stay </button>
+        <button type="submit" form="form-advoption" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+		<a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a></div>
+       <h1>{{ heading_title }}</h1>
+      <ul class="breadcrumb">
+		{% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    {% if error_warning %}
+    <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+	{% if success %}
+    <div class="alert alert-success"><i class="fa fa-exclamation-circle"></i> {{ success }}
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
+    {% endif %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+		<div class="pull-right">
+			<b>Stores : </b><select onchange="location = this.options[this.selectedIndex].value;" name="store_id">
+			<option value="{{ store_action }}&store_id=0">{{ text_default }}</option>
+				{% for store in stores %}
+					{% if store['store_id']==store_id %}
+						{% set select = 'selected=selected' %}
+					{% else %}
+						{% set select = '' %}
+					{% endif %}
+			<option {{ select }} value="{{ store_action }}&store_id= {{ store['store_id'] }}">{{ store['name'] }}</option>
+			{% endfor %}
+			</select>
+		</div>
+      </div>
+      <div class="panel-body">
+        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-advoption" class="form-horizontal">
+		  <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab-general" data-toggle="tab"><i class="fa fa-cogs" aria-hidden="true"></i> {{ tab_general }}</a></li>
+            <li><a href="#tab-front" data-toggle="tab"><i class="fa fa-cogs" aria-hidden="true"></i> {{ tab_front }}</a></li>
+            <li><a href="#tab-language" data-toggle="tab"><i class="fa fa-language" aria-hidden="true"></i> {{ tab_language }}</a></li>
+          </ul>
+		  <div class="tab-content">
+            <div class="tab-pane active" id="tab-general">
+				<input type="hidden" name="stay" class="stay" value="0"/>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-width"><span data-toggle="tooltip" title="Enabled Or Disabled Module">Module Status</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_status" id="input-status" class="form-control">
+						{% if module_advancedoption_status %}
+						<option value="1" selected="selected">{{ text_enabled }}</option>
+						<option value="0">{{ text_disabled }}</option>
+						{% else %}
+						<option value="1">{{ text_enabled }}</option>
+						<option value="0" selected="selected">{{ text_disabled }}</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-width"><span data-toggle="tooltip" title="Enabled or Disabled Model">Model</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_model" id="input-status" class="form-control">
+						{% if module_advancedoption_model %}
+						<option value="1" selected="selected">{{ text_enabled }}</option>
+						<option value="0">{{ text_disabled }}</option>
+						{% else %}
+						<option value="1">{{ text_enabled }}</option>
+						<option value="0" selected="selected">{{ text_disabled }}</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="Enabled or Disabled SKU">SKU</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_sku" id="input-status" class="form-control">
+						{% if module_advancedoption_sku %}
+						<option value="1" selected="selected">{{ text_enabled }}</option>
+						<option value="0">{{ text_disabled }}</option>
+						{% else %}
+						<option value="1">{{ text_enabled }}</option>
+						<option value="0" selected="selected">{{ text_disabled }}</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-UPC"><span data-toggle="tooltip" title="Enabled or Disabled UPC">UPC</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_upc" id="input-status" class="form-control">
+						{% if module_advancedoption_upc %}
+						<option value="1" selected="selected">{{ text_enabled }}</option>
+						<option value="0">{{ text_disabled }}</option>
+						{% else %}
+						<option value="1">{{ text_enabled }}</option>
+						<option value="0" selected="selected">{{ text_disabled }}</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-EAN"><span data-toggle="tooltip" title="Enabled or Disabled UPC">EAN</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_ean" id="input-EAN" class="form-control">
+						{% if module_advancedoption_ean %}
+						<option value="1" selected="selected">{{ text_enabled }}</option>
+						<option value="0">{{ text_disabled }}</option>
+						{% else %}
+						<option value="1">{{ text_enabled }}</option>
+						<option value="0" selected="selected">{{ text_disabled }}</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-JAN"><span data-toggle="tooltip" title="Enabled or Disabled JAN">JAN</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_jan" id="input-JAN" class="form-control">
+						{% if module_advancedoption_jan %}
+						<option value="1" selected="selected">{{ text_enabled }}</option>
+						<option value="0">{{ text_disabled }}</option>
+						{% else %}
+						<option value="1">{{ text_enabled }}</option>
+						<option value="0" selected="selected">{{ text_disabled }}</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-customer_group"><span data-toggle="tooltip" title="Restrict Customer Group">Customer Group</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_customer_group" id="input-customer_group" class="form-control">
+						{% if module_advancedoption_customer_group %}
+						<option value="1" selected="selected">{{ text_enabled }}</option>
+						<option value="0">{{ text_disabled }}</option>
+						{% else %}
+						<option value="1">{{ text_enabled }}</option>
+						<option value="0" selected="selected">{{ text_disabled }}</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-customer_group"><span data-toggle="tooltip" title="options Pre Selected">Default Select</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_default_status" id="input-customer_group" class="form-control">
+						{% if module_advancedoption_default_status %}
+						<option value="1" selected="selected">{{ text_enabled }}</option>
+						<option value="0">{{ text_disabled }}</option>
+						{% else %}
+						<option value="1">{{ text_enabled }}</option>
+						<option value="0" selected="selected">{{ text_disabled }}</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-option-image"><span data-toggle="tooltip" title="Enabled Or Disabled Option Image">Option Image</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_image" id="input-option-image" class="form-control">
+						{% if module_advancedoption_image %}
+						<option value="1" selected="selected">{{ text_enabled }}</option>
+						<option value="0">{{ text_disabled }}</option>
+						{% else %}
+						<option value="1">{{ text_enabled }}</option>
+						<option value="0" selected="selected">{{ text_disabled }}</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+			</div>
+			<div class="tab-pane" id="tab-language">
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-button_label"><span data-toggle="tooltip" title="Model Title">Model Title</span></label>
+						<div class="col-sm-5">
+							 <ul class="nav nav-tabs" id="language">
+								{% for language in languages %}
+								<li><a href="#language{{ language['language_id'] }}" data-toggle="tab"><img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" />
+								 {{ language['name'] }}</a></li>
+								{% endfor %}
+							 </ul>
+							 <div class="tab-content">
+								{% for language in languages %}
+									<div class="tab-pane" id="language{{ language['language_id'] }}">
+										<input type="text" class="form-control" name="module_advancedoption_model_title{{ language['language_id'] }}" value="{{ module_advancedoption_model_title[language['language_id']] ? module_advancedoption_model_title[language['language_id']] : ''}}"/>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-button_label"><span data-toggle="tooltip" title="SKU Title">SKU Title</span></label>
+						<div class="col-sm-5">
+							 <ul class="nav nav-tabs" id="language-sku">
+								{% for language in languages %}
+								<li><a href="#language1{{ language['language_id'] }}" data-toggle="tab">
+								<img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" />
+								{{ language['name'] }}</a></li>
+								{% endfor %}
+							 </ul>
+							 <div class="tab-content">
+								{% for language in languages %}
+									<div class="tab-pane" id="language1{{ language['language_id'] }}">
+										<input type="text" class="form-control" name="module_advancedoption_sku_title{{ language['language_id'] }}" value="{{ module_advancedoption_sku_title[language['language_id']] ? module_advancedoption_sku_title[language['language_id']] : ''}}"/>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-button_label"><span data-toggle="tooltip" title="UPC Title">UPC Title</span></label>
+						<div class="col-sm-5">
+							 <ul class="nav nav-tabs" id="language-upc">
+								{% for language in languages %}
+								<li><a href="#language2{{ language['language_id'] }}" data-toggle="tab">
+								<img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /> {{ language['name'] }}</a></li>
+								{% endfor %}
+							 </ul>
+							 <div class="tab-content">
+								{% for language in languages %}
+									<div class="tab-pane" id="language2{{ language['language_id'] }}">
+										<input type="text" class="form-control" name="module_advancedoption_upc_title{{ language['language_id'] }}" value="{{ module_advancedoption_upc_title[language['language_id']] ? module_advancedoption_upc_title[language['language_id']] : ''}}"/>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-button_label"><span data-toggle="tooltip" title="EAN Title">EAN Title</span></label>
+						<div class="col-sm-5">
+							 <ul class="nav nav-tabs" id="language-ean">
+								{% for language in languages %}
+								<li><a href="#language3{{ language['language_id'] }}" data-toggle="tab">
+								<img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /> {{ language['name'] }}</a></li>
+								{% endfor %}
+							 </ul>
+							 <div class="tab-content">
+								{% for language in languages %}
+									<div class="tab-pane" id="language3{{ language['language_id'] }}">
+										<input type="text" class="form-control" name="module_advancedoption_ean_title{{ language['language_id'] }}" value="{{ module_advancedoption_ean_title[language['language_id']] ? module_advancedoption_ean_title[language['language_id']] : ''}}"/>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-button_label"><span data-toggle="tooltip" title="JAN Title">JAN Title</span></label>
+						<div class="col-sm-5">
+							 <ul class="nav nav-tabs" id="language-jan">
+								{% for language in languages %}
+								<li><a href="#language4{{ language['language_id'] }}" data-toggle="tab">
+								<img src="language/{{ language.code }}/{{ language.code }}.png" title="{{ language.name }}" /> {{ language['name'] }}</a></li>
+								{% endfor %}
+							 </ul>
+							 <div class="tab-content">
+								{% for language in languages %}
+									<div class="tab-pane" id="language4{{ language['language_id'] }}">
+										<input type="text" class="form-control" name="module_advancedoption_jan_title{{ language['language_id'] }}" value="{{ module_advancedoption_jan_title[language['language_id']] ? module_advancedoption_jan_title[language['language_id']] : ''}}"/>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+			</div>
+			<div class="tab-pane" id="tab-front">
+				<div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-model"><span data-toggle="tooltip" title="live Change Model When Product Option select">Model</span></label>
+					<div class="col-sm-5">
+					 <select name="module_advancedoption_model_status" id="input-status" class="form-control">
+						{% if module_advancedoption_model_status==1 %}
+						<option value="1" selected="selected">Yes With (Product Model + Option Model)</option>
+						<option value="2">Yes With Option Model Only</option>
+						<option value="0">No (Never change Product Model)</option>
+						{% elseif module_advancedoption_model_status==2 %}
+						<option value="1">Yes With (Product Model + Option Model)</option>
+						<option value="2" selected="selected">Yes With Option Model Only</option>
+						<option value="0">No (Never change Product Model)</option>
+						{% else %}
+						<option value="1">Yes With (Product Model + Option Model)</option>
+						<option value="2">Yes With Option Model Only</option>
+						<option value="0" selected="selected">No (Never change Product Model)</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group hide">
+					<label class="col-sm-2 control-label" for="input-"><span data-toggle="tooltip" title="Add Prefix Between Product Model and Option Model">Model Prefix</span></label>
+					<div class="col-sm-5">
+					  <input type="text" name="module_advancedoption_model_prefix" class="form-control" value="{{ module_advancedoption_model_prefix }}"/>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="Show Sku On Product Page">Sku</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_sku_status" id="input-status" class="form-control">
+						{% if module_advancedoption_sku_status %}
+						<option value="1" selected="selected">Yes</option>
+						<option value="0">No</option>
+						{% else %}
+						<option value="1">Yes</option>
+						<option value="0" selected="selected">No</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="Show UPC On Product Page">UPC</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_upc_status" id="input-status" class="form-control">
+						{% if module_advancedoption_upc_status %}
+						<option value="1" selected="selected">Yes</option>
+						<option value="0">No</option>
+						{% else %}
+						<option value="1">Yes</option>
+						<option value="0" selected="selected">No</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-sku"><span data-toggle="tooltip" title="Show EAN On Product Page">EAN</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_ean_status" id="input-ean-status" class="form-control">
+						{% if module_advancedoption_ean_status %}
+						<option value="1" selected="selected">Yes</option>
+						<option value="0">No</option>
+						{% else %}
+						<option value="1">Yes</option>
+						<option value="0" selected="selected">No</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-jan"><span data-toggle="tooltip" title="Show JAN On Product Page">JAN</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_jan_status" id="input-jan-status" class="form-control">
+						{% if module_advancedoption_jan_status %}
+						<option value="1" selected="selected">Yes</option>
+						<option value="0">No</option>
+						{% else %}
+						<option value="1">Yes</option>
+						<option value="0" selected="selected">No</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-image"><span data-toggle="tooltip" title="Swap Image when select Product Option ">Option Image</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_image_status" id="input-status" class="form-control">
+						{% if module_advancedoption_image_status %}
+						<option value="1" selected="selected">Yes</option>
+						<option value="0">No</option>
+						{% else %}
+						<option value="1">Yes</option>
+						<option value="0" selected="selected">No</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-description"><span data-toggle="tooltip" title="Show Option Description">Option Description</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_description_status" id="input-status" class="form-control">
+						{% if module_advancedoption_description_status %}
+						<option value="1" selected="selected">Yes</option>
+						<option value="0">No</option>
+						{% else %}
+						<option value="1">Yes</option>
+						<option value="0" selected="selected">No</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+				   <label class="col-sm-2 control-label" for="input-description"><span data-toggle="tooltip" title="Enable Live Change Option Price">Live Option Price</span></label>
+					<div class="col-sm-5">
+					  <select name="module_advancedoption_live_change_status" id="input-status" class="form-control">
+						{% if module_advancedoption_live_change_status %}
+						<option value="1" selected="selected">Yes</option>
+						<option value="0">No</option>
+						{% else %}
+						<option value="1">Yes</option>
+						<option value="0" selected="selected">No</option>
+						{% endif %}
+					  </select>
+					</div>
+				 </div>
+				 <div class="form-group">
+					<label class="col-sm-2 control-label"><span data-toggle="tooltip" title="Price Calculate Based on selected quantity <br/> i.e ((Base Price + Option Price) * Quantity) <br/> and if choose No then it's automatic calatute with one qty">Calculate With Quantity</span></label>
+					<div class="col-sm-10">
+					  <label class="radio-inline">
+						{% if module_advancedoption_qty_status %}
+						<input type="radio" name="module_advancedoption_qty_status" value="1" checked="checked" />
+						{{ text_yes }}
+						{% else %}
+						<input type="radio" name="module_advancedoption_qty_status" value="1" />
+						{{ text_yes }}
+						{% endif %}
+					  </label>
+					  <label class="radio-inline">
+					    {% if not module_advancedoption_qty_status %}
+						<input type="radio" name="module_advancedoption_qty_status" value="0" checked="checked" />
+						{{ text_no }}
+						{% else %}
+						<input type="radio" name="module_advancedoption_qty_status" value="0" />
+						{{ text_no }}
+						{% endif %}
+					  </label>
+					</div>
+				 </div>
+			</div>
+		  </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript"><!--
+$('#language a:first').tab('show');
+$('#language-sku a:first').tab('show');
+$('#language-upc a:first').tab('show');
+$('#language-ean a:first').tab('show');
+$('#language-jan a:first').tab('show');
+//--></script>
+{{ footer }}

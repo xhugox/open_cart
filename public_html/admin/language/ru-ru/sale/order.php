@@ -1,0 +1,132 @@
+<?php
+// Heading
+$_['heading_title'] = 'Заказы';
+
+// Text
+$_['text_success'] = 'Успех: вы изменили заказы!';
+$_['text_list'] = 'Список заказов';
+$_['text_add'] = 'Добавить заказ';
+$_['text_edit'] = 'Редактировать заказ';
+$_['text_filter'] = 'Фильтр';
+$_['text_order_detail'] = 'Детали заказа';
+$_['text_customer_detail'] = 'Сведения о клиенте';
+$_['text_option'] = 'Параметры';
+$_['text_store'] = 'Магазин';
+$_['text_date_added'] = 'Дата добавления';
+$_['text_payment_method'] = 'Способ оплаты';
+$_['text_shipping_method'] = 'Способ доставки';
+$_['text_customer'] = 'Клиент';
+$_['text_customer_group'] = 'Группа клиентов';
+$_['text_email'] = 'Электронная почта';
+$_['text_telephone'] = 'Телефон';
+$_['text_fax'] = 'Факс';
+$_['text_invoice'] = 'Счет';
+$_['text_reward'] = 'Наградные баллы';
+$_['text_affiliate'] = 'Партнер';
+$_['text_order'] = 'Заказ (#%s)';
+$_['text_payment_address'] = 'Платежный адрес';
+$_['text_shipping_address'] = 'Адрес доставки';
+$_['text_comment'] = 'Комментарий клиента';
+$_['text_history'] = 'История заказов';
+$_['text_history_add'] = 'Добавить историю заказов';
+$_['text_account_custom_field'] = 'Пользовательские поля аккаунта';
+$_['text_payment_custom_field'] = 'Пользовательские поля адреса платежа';
+$_['text_shipping_custom_field'] = 'Пользовательские поля адреса доставки';
+$_['text_browser'] = 'Браузер';
+$_['text_ip'] = 'IP-адрес';
+$_['text_forwarded_ip'] = 'Пересылаемый IP-адрес';
+$_['text_user_agent'] = 'Пользовательский агент';
+$_['text_accept_language'] = 'Принять язык';
+$_['text_order_id'] = 'Идентификатор заказа:';
+$_['text_website'] = 'Веб-сайт:';
+$_['text_invoice_no'] = 'Номер счета';
+$_['text_invoice_date'] = 'Дата счета:';
+$_['text_sku'] = 'Артикул:';
+$_['text_upc'] = 'СКП:';
+$_['text_ean'] = 'ЕАН:';
+$_['text_jan'] = 'Error 500 (Server Error)!!1500.That’s an error.There was an error. Please try again later.That’s all we know.';
+$_['text_isbn'] = 'ISBN:';
+$_['text_mpn'] = 'МПН:';
+$_['text_missing'] = 'Отсутствующие заказы';
+$_['text_default'] = 'По умолчанию';
+$_['text_product'] = 'Добавить продукт(ы)';
+$_['text_voucher'] = 'Добавить ваучер(ы)';
+$_['text_shipping'] = 'Перевозки';
+$_['text_contact'] = 'Контакт';
+$_['text_reward_added'] = 'Успех: добавлены призовые баллы!';
+$_['text_reward_removed'] = 'Успех: Наградные баллы удалены!';
+$_['text_commission_added'] = 'Успех: Комиссия добавлена!';
+$_['text_commission_removed'] = 'Успех: комиссия снята!';
+$_['text_restock'] = 'Успех: Товары пополнены!';
+$_['text_upload'] = 'Ваш файл успешно загружен!';
+$_['text_picklist'] = 'Примечание об отправке';
+
+// Column
+$_['column_order_id'] = 'Идентификатор заказа';
+$_['column_customer'] = 'Клиент';
+$_['column_status'] = 'Статус';
+$_['column_date_added'] = 'Дата добавления';
+$_['column_date_modified'] = 'Дата изменения';
+$_['column_total'] = 'Общий';
+$_['column_product'] = 'Продукт';
+$_['column_model'] = 'Модель';
+$_['column_quantity'] = 'Количество';
+$_['column_price'] = 'Цена за единицу товара';
+$_['column_comment'] = 'Комментарий';
+$_['column_notify'] = 'Клиент уведомлен';
+$_['column_location'] = 'Расположение';
+$_['column_reference'] = 'Ссылка';
+$_['column_action'] = 'Действие';
+$_['column_weight'] = 'Вес продукта';
+
+// Entry
+$_['entry_store'] = 'Магазин';
+$_['entry_customer'] = 'Клиент';
+$_['entry_customer_group'] = 'Группа клиентов';
+$_['entry_firstname'] = 'Имя';
+$_['entry_lastname'] = 'Фамилия';
+$_['entry_email'] = 'Электронная почта';
+$_['entry_telephone'] = 'Телефон';
+$_['entry_address'] = 'Выберите адрес';
+$_['entry_company'] = 'Компания';
+$_['entry_address_1'] = 'Адрес 1';
+$_['entry_address_2'] = 'Адрес 2';
+$_['entry_city'] = 'Город';
+$_['entry_postcode'] = 'Почтовый индекс';
+$_['entry_country'] = 'Страна';
+$_['entry_zone'] = 'Регион/штат';
+$_['entry_zone_code'] = 'Код региона/штата';
+$_['entry_product'] = 'Выберите продукт';
+$_['entry_option'] = 'Выберите вариант(ы)';
+$_['entry_quantity'] = 'Количество';
+$_['entry_to_name']              = 'Recipient\'s Name';
+$_['entry_to_email']             = 'Recipient\'s E-mail';
+$_['entry_from_name']            = 'Sender\'s Name';
+$_['entry_from_email']           = 'Sender\'s E-mail';
+$_['entry_theme'] = 'Тема подарочного сертификата';
+$_['entry_message'] = 'Сообщение';
+$_['entry_amount'] = 'Количество';
+$_['entry_affiliate'] = 'Партнер';
+$_['entry_order_status'] = 'Статус заказа';
+$_['entry_notify'] = 'Уведомить клиента';
+$_['entry_override'] = 'Переопределить';
+$_['entry_comment'] = 'Комментарий';
+$_['entry_currency'] = 'Валюта';
+$_['entry_shipping_method'] = 'Способ доставки';
+$_['entry_payment_method'] = 'Способ оплаты';
+$_['entry_coupon'] = 'Купон';
+$_['entry_voucher'] = 'Ваучер';
+$_['entry_reward'] = 'Награда';
+$_['entry_order_id'] = 'Идентификатор заказа';
+$_['entry_total'] = 'Общий';
+$_['entry_date_added'] = 'Дата добавления';
+$_['entry_date_modified'] = 'Дата изменения';
+
+// Help
+$_['help_override'] = 'Если заказу клиента запрещено изменение статуса заказа из-за расширения для защиты от мошенничества, включите переопределение.';
+
+// Error
+$_['error_warning'] = 'Внимание: пожалуйста, внимательно проверьте форму на наличие ошибок!';
+$_['error_permission'] = 'Внимание: у вас нет разрешения на изменение заказов!';
+$_['error_action'] = 'Внимание: не удалось выполнить это действие!';
+$_['error_filetype'] = 'Неверный тип файла!';

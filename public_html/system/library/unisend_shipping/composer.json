@@ -1,0 +1,26 @@
+{
+    "name": "oc/unisendshipping",
+    "description": "",
+    "config": {
+        "preferred-install": "dist",
+        "optimize-autoloader": true,
+        "prepend-autoloader": false,
+        "platform": {
+            "php": "7.4"
+        }
+    },
+    "autoload": {
+        "classmap": [
+            "api",
+            "repository",
+            "services",
+            "cons",
+            "context"
+        ]
+    },
+    "author": "UnisendShipping",
+    "license": "AFL-3.0",
+    "require": {
+        "dvdoug/boxpacker": "^3.12"
+    }
+}

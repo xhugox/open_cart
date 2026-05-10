@@ -1,0 +1,14 @@
+.select2-container {
+  width: 100% !important;
+}
+
+.unisend-logo {
+  max-width: 16em;
+  max-height: 8em;
+  position: absolute;
+}
+
+p:has(.unisend-logo) {
+  position: relative;
+  padding-bottom: 5.2em;
+}

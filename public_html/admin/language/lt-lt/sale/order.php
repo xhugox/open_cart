@@ -1,0 +1,132 @@
+<?php
+// Heading
+$_['heading_title'] = 'Užsakymai';
+
+// Text
+$_['text_success'] = 'Sėkmė: pakeitėte užsakymus!';
+$_['text_list'] = 'Užsakymų sąrašas';
+$_['text_add'] = 'Pridėti užsakymą';
+$_['text_edit'] = 'Redaguoti užsakymą';
+$_['text_filter'] = 'Filtruoti';
+$_['text_order_detail'] = 'Užsakymo detalės';
+$_['text_customer_detail'] = 'Kliento informacija';
+$_['text_option'] = 'Parinktys';
+$_['text_store'] = 'Parduotuvė';
+$_['text_date_added'] = 'Įtraukimo data';
+$_['text_payment_method'] = 'Mokėjimo būdas';
+$_['text_shipping_method'] = 'Pristatymo būdas';
+$_['text_customer'] = 'Klientas';
+$_['text_customer_group'] = 'Klientų grupė';
+$_['text_email'] = 'El. paštas';
+$_['text_telephone'] = 'Telefonas';
+$_['text_fax'] = 'Faksas';
+$_['text_invoice'] = 'Sąskaita faktūra';
+$_['text_reward'] = 'Atlygio taškai';
+$_['text_affiliate'] = 'Filialas';
+$_['text_order'] = 'Užsakymas (#%s)';
+$_['text_payment_address'] = 'Mokėjimo adresas';
+$_['text_shipping_address'] = 'Pristatymo adresas';
+$_['text_comment'] = 'Kliento komentaras';
+$_['text_history'] = 'Užsakymų istorija';
+$_['text_history_add'] = 'Pridėti užsakymų istoriją';
+$_['text_account_custom_field'] = 'Paskyros tinkinti laukai';
+$_['text_payment_custom_field'] = 'Mokėjimo adreso pasirinktiniai laukai';
+$_['text_shipping_custom_field'] = 'Pristatymo adreso pasirinktiniai laukai';
+$_['text_browser'] = 'Naršyklė';
+$_['text_ip'] = 'IP adresas';
+$_['text_forwarded_ip'] = 'Persiunčiamas IP';
+$_['text_user_agent'] = 'Vartotojo agentas';
+$_['text_accept_language'] = 'Priimti kalbą';
+$_['text_order_id'] = 'Užsakymo ID:';
+$_['text_website'] = 'Interneto svetainė:';
+$_['text_invoice_no'] = 'Sąskaita Nr.';
+$_['text_invoice_date'] = 'Sąskaitos faktūros data:';
+$_['text_sku'] = 'SKU:';
+$_['text_upc'] = 'UPC:';
+$_['text_ean'] = 'EAN:';
+$_['text_jan'] = 'SAUSIO S.:';
+$_['text_isbn'] = 'ISBN:';
+$_['text_mpn'] = 'MPN:';
+$_['text_missing'] = 'Trūksta užsakymų';
+$_['text_default'] = 'Numatytoji';
+$_['text_product'] = 'Pridėti produktą (-us)';
+$_['text_voucher'] = 'Pridėti kuponą (-us)';
+$_['text_shipping'] = 'Siuntimas';
+$_['text_contact'] = 'Susisiekite';
+$_['text_reward_added'] = 'Sėkmė: pridėti premijos taškai!';
+$_['text_reward_removed'] = 'Sėkmė: atlygio taškai pašalinti!';
+$_['text_commission_added'] = 'Sėkmė: Komisija pridėta!';
+$_['text_commission_removed'] = 'Sėkmė: Komisija pašalinta!';
+$_['text_restock'] = 'Sėkmė: produktai buvo papildyti!';
+$_['text_upload'] = 'Jūsų failas sėkmingai įkeltas!';
+$_['text_picklist'] = 'Išsiuntimo pažyma';
+
+// Column
+$_['column_order_id'] = 'Užsakymo ID';
+$_['column_customer'] = 'Klientas';
+$_['column_status'] = 'Būsena';
+$_['column_date_added'] = 'Įtraukimo data';
+$_['column_date_modified'] = 'Pakeitimo data';
+$_['column_total'] = 'Iš viso';
+$_['column_product'] = 'Produktas';
+$_['column_model'] = 'Modelis';
+$_['column_quantity'] = 'Kiekis';
+$_['column_price'] = 'Vieneto kaina';
+$_['column_comment'] = 'komentuoti';
+$_['column_notify'] = 'Klientas informuotas';
+$_['column_location'] = 'Vieta';
+$_['column_reference'] = 'Nuoroda';
+$_['column_action'] = 'Veiksmas';
+$_['column_weight'] = 'Produkto svoris';
+
+// Entry
+$_['entry_store'] = 'Parduotuvė';
+$_['entry_customer'] = 'Klientas';
+$_['entry_customer_group'] = 'Klientų grupė';
+$_['entry_firstname'] = 'Vardas';
+$_['entry_lastname'] = 'Pavardė';
+$_['entry_email'] = 'El. paštas';
+$_['entry_telephone'] = 'Telefonas';
+$_['entry_address'] = 'Pasirinkite Adresas';
+$_['entry_company'] = 'Įmonė';
+$_['entry_address_1'] = '1 adresas';
+$_['entry_address_2'] = '2 adresas';
+$_['entry_city'] = 'Miestas';
+$_['entry_postcode'] = 'Pašto indeksas';
+$_['entry_country'] = 'Šalis';
+$_['entry_zone'] = 'Regionas / valstybė';
+$_['entry_zone_code'] = 'Regiono / valstijos kodas';
+$_['entry_product'] = 'Pasirinkite Produktą';
+$_['entry_option'] = 'Pasirinkite parinktį (-as)';
+$_['entry_quantity'] = 'Kiekis';
+$_['entry_to_name']              = 'Recipient\'s Name';
+$_['entry_to_email']             = 'Recipient\'s E-mail';
+$_['entry_from_name']            = 'Sender\'s Name';
+$_['entry_from_email']           = 'Sender\'s E-mail';
+$_['entry_theme'] = 'Dovanų kupono tema';
+$_['entry_message'] = 'Pranešimas';
+$_['entry_amount'] = 'Suma';
+$_['entry_affiliate'] = 'Filialas';
+$_['entry_order_status'] = 'Užsakymo būsena';
+$_['entry_notify'] = 'Pranešti Klientui';
+$_['entry_override'] = 'Nepaisyti';
+$_['entry_comment'] = 'komentuoti';
+$_['entry_currency'] = 'Valiuta';
+$_['entry_shipping_method'] = 'Pristatymo būdas';
+$_['entry_payment_method'] = 'Mokėjimo būdas';
+$_['entry_coupon'] = 'Kuponas';
+$_['entry_voucher'] = 'Kuponas';
+$_['entry_reward'] = 'Atlygis';
+$_['entry_order_id'] = 'Užsakymo ID';
+$_['entry_total'] = 'Iš viso';
+$_['entry_date_added'] = 'Įtraukimo data';
+$_['entry_date_modified'] = 'Pakeitimo data';
+
+// Help
+$_['help_override'] = 'Jei klientų užsakymas blokuojamas, kad negalėtų keisti užsakymo būsenos dėl kovos su sukčiavimu plėtinio įgalinimo nepaisymo.';
+
+// Error
+$_['error_warning'] = 'Įspėjimas: atidžiai patikrinkite, ar formoje nėra klaidų!';
+$_['error_permission'] = 'Įspėjimas: Jūs neturite leidimo keisti užsakymų!';
+$_['error_action'] = 'Įspėjimas: šio veiksmo atlikti nepavyko!';
+$_['error_filetype'] = 'Neteisingas failo tipas!';

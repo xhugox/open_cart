@@ -1,0 +1,344 @@
+<div class="tab-content unisendshipping-container">
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+			<h3 class="panel-title">{{text_shipping_unisend_shipping_shipping}}</h3>
+		  </div>
+		<div class="panel-body">
+    <div class="lps-panel">
+        <div class="lps-form-div">
+            <form action="{{unisendSaveShipmentAction}}" method="post" id="unisendshipping_order_submit_form">
+                <div class="form-horizontal">
+
+                    <div class="row form-group">
+                        {% if unisendLastError and unisendLastError is not empty %}
+                            <div class="col-md-12">
+                                <div class="unisend-alert alert-danger">
+                                    <strong>{{text_shipping_unisend_shipping_error}}</strong> {{unisendLastError}}
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        <!-- First column -->
+                        <div class="col-md-6">
+                            <div class="col-md-12 field-group" {% if not unisendSavedParcelPartCount %} style="display: none" {% endif %}>
+                                <label for="unisendshipping-partCount" class="control-label required">{{text_shipping_unisend_shipping_order_part_count}} *</label>
+                                <input id="unisendshipping-partCount" class="input-group form-control" type="text" name="partCount"
+                                       value="{{unisendSavedParcelPartCount}}" {% if unisendIsShipmentFormed == true %} disabled {% endif %}/>
+                            </div>
+
+                            <div class="col-md-12 field-group" {% if not unisendParcelWeightAvailable %} style="display: none" {% endif %}>
+                                <label for="unisendshipping-weight"
+                                       class="control-label required">{{text_shipping_unisend_shipping_order_weight}} *</label>
+                                <input id="unisendshipping-weight" type="text" name="weight" value="{{unisendSavedParcelWeight}}"
+                                       class="form-control"  {% if unisendIsShipmentFormed == true %} disabled {% endif %}/>
+                            </div>
+                            <div class="col-md-12 field-group" {% if not unisendParcelSizeAvailable %} style="display: none" {% endif %}>
+                                <label for="size" class="control-label required">{{text_shipping_unisend_shipping_order_size}}
+                                    *</label>
+                                <select name="size" class="form-control" id="unisendshipping-size-select" {% if unisendIsShipmentFormed == true %} disabled {% endif %}>
+                                    {% for size in unisendParcelSizes %}
+                                        <option value="{{size}}"
+                                                {% if size == unisendSavedParcelSize %}selected="selected"{% endif %}>{{size}}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+
+                            </div>
+
+                            {% if unisendCodAvailable %}
+                            <div class="col-md-12 field-group">
+                                <label for="codSelected" class="control-label required">{{text_shipping_unisend_shipping_order_cod_flag}}</label>
+                                <select name="codSelected" id="unisendshipping-cod-select" autocomplete="off" class="form-control" {% if unisendIsShipmentFormed  == true %} disabled {% endif %}>
+                                    <option value="0">{{text_shipping_unisend_shipping_select_no}}</option>
+                                    <option value="1" {% if unisendCodSelected %} selected="selected" {% endif %}>{{text_shipping_unisend_shipping_select_yes}}</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12 field-group" id="unisendshipping-cod-amount-box">
+                                <label for="codAmount" class="control-label required">{{text_shipping_unisend_shipping_order_cod_amount}}</label>
+                                <input type="text" name="codAmount" value="{{unisendCodAmount}}" class="form-control" {% if unisendIsShipmentFormed == true %} disabled {% endif %} />
+                            </div>
+                            {% endif %}
+
+
+                        </div>
+                        <!-- Second column -->
+                        <div class="col-md-6">
+                            <div class="col-md-12 field-group">
+                                <label for="planCode" class="control-label required">{{text_shipping_unisend_shipping_order_plan}}
+                                    *</label>
+                                <select name="plan_code" class="form-control" id="unisendshipping-plan-code-select" {% if unisendIsShipmentFormed  == true %} disabled {% endif %}>
+                                    {% for planCode, planName in unisendSavedParcelPlanCodes %}
+                                        <option value="{{planCode}}"
+                                                {% if planCode == unisendSavedParcelPlanCode %}selected="selected"{% endif %}>{{planName}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="col-md-12 field-group">
+                                <label for="parcelType"
+                                       class="control-label required">{{text_shipping_unisend_shipping_order_parcel_type}}
+                                    *</label>
+                                <select name="parcel_type" class="form-control" id="unisendshipping-parcel-type-select" {% if unisendIsShipmentFormed  == true %} disabled {% endif %}>
+                                    {% for parcelType, parcelTypeName in unisendSavedParcelTypes %}
+                                        <option value="{{parcelType}}"
+                                                {% if parcelType == unisendSavedParcelType %}selected="selected"{% endif %}>{{parcelTypeName}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+
+                            <div class="col-md-12 field-group unisendshipping-terminals-select-container">
+                                <label for="terminalId"
+                                       class="control-label required">{{text_shipping_unisend_shipping_order_terminals}}
+                                    *</label>
+                                <select class="unisendshipping-terminals-select form-control" name="terminalId" {% if unisendIsShipmentFormed  == true %} disabled {% endif %}>
+                                    {% if terminalId %} <option value="{{terminalId}}">{{terminal}}</option> {% endif %}
+                                </select>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12 lps-form-btns">
+                            {% if unisendIsShipmentFormed == false %}
+                                <button type="submit" class="btn btn-primary pull-right" name="saveUnisendShippingOrder">
+                                    {% if unisendIsOrderSaved == false %}
+                                        {{text_shipping_unisend_shipping_button_save}}
+                                    {% else %}
+                                        {{text_shipping_unisend_shipping_button_update}}
+                                    {% endif %}
+                                </button>
+
+                                {% if unisendIsOrderSaved == true %}
+                                    <button type="submit" class="btn btn-primary pull-right" name="formShipments" style="margin-right: 8px">
+                                        {{text_shipping_unisend_shipping_button_form_shipment}}
+                                    </button>
+                                {% endif %}
+                            {% endif %}
+
+                            {% if unisendIsCancellable == true %}
+                                <button type="submit" class="btn btn-primary pull-right" name="cancelShipments" style="margin-right: 8px">
+                                    {{text_shipping_unisend_shipping_button_cancel_shipment}}
+                                </button>
+                            {% endif %}
+
+                            {% if unisendIsCallCourierAvailable == true %}
+                                <button type="submit" class="btn btn-primary pull-right" name="callCourier" style="margin-right: 8px">
+                                    {{text_shipping_unisend_shipping_button_call_courier}}
+                                </button>
+                            {% endif %}
+
+                            {% if unisendAreDocumentsPrintable %}
+                                {% if unisendIsLabelPrintable %}
+                                <button type="submit" class="btn btn-primary pull-right" name="printLabel" style="margin-right: 8px">
+                                    {{text_shipping_unisend_shipping_button_print_label}}
+                                </button>
+                                {% endif %}
+
+                                {% if unisendIsManifestPrintable %}
+                                    <button type="submit" class="btn btn-primary pull-right" name="printManifest"
+                                            style="margin-right: 8px">
+                                        {{text_shipping_unisend_shipping_button_print_manifest}}
+                                    </button>
+                                {% endif %}
+
+                            {% endif %}
+
+                            {% if unisendCnRequired and unisendIsShipmentFormed != true %}
+                                <button type="button" class="btn btn-primary pull-right" style="margin-right: 8px" data-toggle="modal" data-target="#declarationsModal">
+                                    {{text_shipping_unisend_shipping_button_cn_fill}}
+                                </button>
+                            {% endif %}
+
+                            {% if unisendIsDeleteAvailable == true %}
+                                <button type="submit" class="btn btn-danger pull-left" name="deleteParcels" style="margin-right: 8px">
+                                    {{text_shipping_unisend_shipping_button_delete}}
+                                </button>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="barcode" value="{{unisendBarcode}}" />
+                    <input type="hidden" name="parcelId" value="{{unisendParcelId}}" />
+                    <input id="unisend-terminal" type="hidden" name="terminal" value="{{terminal}}" />
+
+                </div>
+
+                {% if unisendCnRequired %}
+                <!-- Modal edit action content for CN23/CN22 declarations -->
+                <div class="modal fade" id="declarationsModal" tabindex="-1" role="dialog" aria-labelledby="declarationsModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="declarationsModalLabel">{{text_shipping_unisend_shipping_button_cn_fill}}</h3>
+                            </div>
+                            <div class="modal-body">
+                                <div class="unisendshipping-declaration-edit-modal">
+                                    <!-- Select parcel type -->
+                                    <div class="parcel-type">
+                                        <label for="cnForm[contentType]" class="control-label required">{{text_shipping_unisend_shipping_order_parcel_type}}</label>
+                                        <select name="cnForm[contentType]" class="form-control" id="unisendshipping-parcel-type">
+                                            {% for key,type in unisendDeclarationParcelTypes %}
+                                                {% if parcelData.documents.cn.contentType == key %}
+                                                    <option value="{{key}}" selected>{{type}}</option>
+                                                {% else %}
+                                                    <option value="{{key}}">{{type}}</option>
+                                                {% endif %}
+
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+
+
+                                    <!-- Parcel description -->
+                                    <div class="parcel-description">
+                                        <label for="cnForm[contentDescription]"
+                                               class="control-label required">{{text_shipping_unisend_shipping_order_cn_description}}</label>
+                                        <input type="text" name="cnForm[contentDescription]"
+                                               value="{{parcelData.documents.cn.contentDescription}}" class="form-control"/>
+                                    </div>
+
+                                    <!-- CN Parts -->
+
+                                    <table class="data-table admin__table-primary edit-order-table">
+                                        <thead class="lp-cn-parts">
+                                        <tr class="headings">
+                                            <th class="col-cn-part col-summary">
+                                                <span>
+                                                    {{text_shipping_unisend_shipping_order_cn_summary}}<span style="color:red">*</span>
+                                                </span>
+                                            </th>
+                                            <th class="col-cn-part col-amount">
+                                                <span>
+                                                    {{text_shipping_unisend_shipping_order_cn_amount}}<span style="color:red">*</span>
+                                                </span>
+                                            </th>
+                                            <th class="col-cn-part col-currency">
+                                                <span>
+                                                    {{text_shipping_unisend_shipping_order_cn_currency}}<span style="color:red">*</span>
+                                                </span>
+                                            </th>
+                                            <th class="col-cn-part col-weight">
+                                                <span>
+                                                    {{text_shipping_unisend_shipping_order_cn_weight}} (g) <span style="color:red">*</span>
+                                                </span>
+                                            </th>
+                                            <th class="col-cn-part col-quantity">
+                                                <span>
+                                                    {{text_shipping_unisend_shipping_order_cn_quantity}} <span style="color:red">*</span>
+                                                </span>
+                                            </th>
+                                            <th class="col-cn-part col-country">
+                                                <span>
+                                                    {{text_shipping_unisend_shipping_order_cn_origin_country}}
+                                                </span>
+                                            </th>
+                                            <th class="col-cn-part col-hs-code">
+                                                <span>{{text_shipping_unisend_shipping_order_cn_hs}}</span>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="even">
+                                        {% for cnPartIndex, item in unisendSavedCnParts %}
+                                            <tr>
+                                                <td class="col-cn-part col-summary">
+                                                        <input class="form-control" name="cnForm[parts][{{cnPartIndex}}][summary]"
+                                                               type="text"
+                                                               id="summary"
+                                                               class="admin__control-text"
+                                                               value="{{item.summary}}"
+                                                               required/>
+                                                </td>
+                                                <td class="col-cn-part col-amount">
+                                                        <input class="form-control" name="cnForm[parts][{{cnPartIndex}}][amount]"
+                                                               type="number"
+                                                               value="{{item.amount}}"
+                                                               step="0.01" id="amount"
+                                                               class="admin__control-text"
+                                                               required/>
+                                                </td>
+                                                <td class="col-cn-part col-currency">
+                                                    <input class="form-control" name="cnForm[parts][{{cnPartIndex}}][currencyCode]"
+                                                           value="{{item.currencyCode}}"
+                                                           id="currencyCode" type="text"
+                                                           class="admin__control-text"
+                                                           required/>
+                                                </td>
+                                                <td class="col-cn-part col-weight">
+                                                        <input class="form-control" name="cnForm[parts][{{cnPartIndex}}][weight]"
+                                                               type="number"
+                                                               value="{{item.weight}}"
+                                                               step="1" id="weight"
+                                                               class="admin__control-text"
+                                                               required/>
+                                                </td>
+                                                <td class="col-cn-part col-quantity">
+                                                        <input class="form-control" name="cnForm[parts][{{cnPartIndex}}][quantity]"
+                                                               type="number"
+                                                               value="{{item.quantity}}"
+                                                               step="1" id="quantity"
+                                                               class="admin__control-text"
+                                                               required/>
+                                                </td>
+                                                <td class="col-cn-part col-country">
+                                                    <input class="form-control" name="cnForm[parts][{{cnPartIndex}}][countryCode]"
+                                                           value="{{item.countryCode}}"
+                                                           id="originCountryCode" type="text"
+                                                           class="admin__control-text"/>
+                                                </td>
+                                                <td class="col-cn-part col-hs-code">
+                                                        <input class="form-control" name="cnForm[parts][{{cnPartIndex}}][hsCode]"
+                                                               id="hsCode"
+                                                               value="{{item.hsCode}}" type="text"
+                                                               class="admin__control-text"/>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{text_shipping_unisend_shipping_button_close}}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    const countryCode = '{{ shippingCountryCode }}';
+    const userToken = '{{ user_token }}';
+    const userTokenParam = '{{ userTokenParam }}';
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+<script src="view/javascript/unisend_shipping/unisend-shipping-order-info.js"></script>
+<style>
+.unisend-alert {
+  padding: 10px;
+  margin-bottom: 18px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.col-cn-part {
+    max-width:75px;
+}
+.col-cn-part.col-summary {
+    max-width:160px;
+}
+.col-cn-part.col-amount {
+    max-width:80px;
+}
+.select2-selection {
+    padding-left: 7px;
+    height: 34px !important;
+}
+.select2-container {
+  width: 100% !important;
+}
+</style>

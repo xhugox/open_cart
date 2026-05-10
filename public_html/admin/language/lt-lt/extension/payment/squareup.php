@@ -1,0 +1,200 @@
+<?php
+
+// Heading
+$_['heading_title'] = 'Kvadratas';
+$_['heading_title_transaction'] = 'Peržiūrėti operaciją #%s';
+
+// Help
+$_['help_total'] = 'Bendra užsakymo apmokėjimo suma turi būti pasiekta, kad šis mokėjimo būdas suaktyvėtų.';
+$_['help_local_cron'] = 'Įdėkite šią komandą į savo žiniatinklio serverio CRON skirtuką. Nustatykite, kad jis veiktų bent kartą per dieną.';
+$_['help_remote_cron'] = 'Naudokite šį URL norėdami nustatyti CRON užduotį naudodami žiniatinklio CRON paslaugą. Nustatykite, kad jis veiktų bent kartą per dieną.';
+$_['help_recurring_status'] = 'Įgalinkite, kad būtų leista periodiškai atlikti pasikartojančius mokėjimus.<br />PASTABA: taip pat turite nustatyti kasdienę CRON užduotį.';
+$_['help_cron_email'] = 'Atlikus pasikartojančios užduoties santrauka bus išsiųsta šiuo el. paštu.';
+$_['help_cron_email_status'] = 'Įgalinkite gauti suvestinę po kiekvienos CRON užduoties.';
+$_['help_notify_recurring_success'] = 'Praneškite klientams apie sėkmingas pasikartojančias operacijas.';
+$_['help_notify_recurring_fail'] = 'Informuokite klientus apie nepavykusias pasikartojančias operacijas.';
+
+// Tab
+$_['tab_setting'] = 'Nustatymai';
+$_['tab_transaction'] = 'Sandoriai';
+$_['tab_cron'] = 'CRON';
+$_['tab_recurring'] = 'Pasikartojantys mokėjimai';
+
+// Text
+$_['text_access_token_expires_label'] = 'Prieigos prieigos raktas baigiasi';
+$_['text_access_token_expires_placeholder'] = 'Ne sąranka';
+$_['text_acknowledge_cron'] = 'Patvirtinu, kad nustatiau automatizuotą CRON užduotį naudodamas vieną iš anksčiau nurodytų metodų.';
+$_['text_admin_notifications'] = 'Administratoriaus pranešimai';
+$_['text_authorize_label'] = 'Įgalioti';
+$_['text_canceled_success'] = 'Sėkmė: sėkmingai atšaukėte šį mokėjimą!';
+$_['text_capture'] = 'Užfiksuoti';
+$_['text_client_id_help'] = 'Gaukite tai iš „Square“ puslapio Tvarkyti programą';
+$_['text_client_id_label'] = 'Kvadratinės programos ID';
+$_['text_client_id_placeholder'] = 'Kvadratinės programos ID';
+$_['text_client_secret_help'] = 'Gaukite tai iš „Square“ puslapio Tvarkyti programą';
+$_['text_client_secret_label'] = '„OAuth“ programos paslaptis';
+$_['text_client_secret_placeholder'] = '„OAuth“ programos paslaptis';
+$_['text_confirm_action'] = 'Ar esi tikras?';
+$_['text_confirm_cancel'] = 'Ar tikrai norite atšaukti pasikartojančius mokėjimus?';
+$_['text_confirm_capture'] = 'Ketinate užfiksuoti šią sumą: <strong>%s</strong>. Spustelėkite Gerai, kad tęstumėte.';
+$_['text_confirm_refund'] = 'Nurodykite pinigų grąžinimo priežastį:';
+$_['text_confirm_void'] = 'Ketinate anuliuoti šią sumą: <strong>%s</strong>. Spustelėkite Gerai, kad tęstumėte.';
+$_['text_connected'] = 'Prisijungta';
+$_['text_connected_info']                               = "Reconnect if you want to switch accounts or have manually revoked this extension's access from the Square App console. Manually refresh the access token if it has been close to 45 days since the last sale or reconnect.";
+$_['text_connection_section'] = 'Kvadratinė jungtis';
+$_['text_connection_success'] = 'Sėkmingai prisijungta!';
+$_['text_cron_email'] = 'Siųsti užduoties santrauką šiuo el. paštu:';
+$_['text_cron_email_status'] = 'Siųsti santrauką el. paštu:';
+$_['text_customer_notifications'] = 'Klientų pranešimai';
+$_['text_debug_disabled'] = 'Išjungta'; 
+$_['text_debug_enabled'] = 'Įjungta'; 
+$_['text_debug_help'] = 'API užklausos ir atsakymai bus registruojami OpenCart klaidų žurnale. Naudokite tai tik derinimo ir kūrimo tikslais.';
+$_['text_debug_label'] = 'Derinimo registravimas';
+$_['text_delay_capture_help'] = 'Tik patvirtinkite operacijas arba atlikite mokesčius automatiškai';
+$_['text_delay_capture_label'] = 'Sandorio tipas';
+$_['text_disabled_connect_help_text'] = 'Kliento ID ir paslaptis yra privalomi.';
+$_['text_edit_heading'] = 'Redaguoti aikštę';
+$_['text_enable_sandbox_help'] = 'Įgalinkite smėlio dėžės režimą operacijoms tikrinti';
+$_['text_enable_sandbox_label'] = 'Įgalinti smėlio dėžės režimą';
+$_['text_executables'] = 'CRON vykdymo metodai';
+$_['text_extension'] = 'Plėtiniai';
+$_['text_extension_status'] = 'Pratęsimo būsena';
+$_['text_extension_status_disabled'] = 'Išjungta'; 
+$_['text_extension_status_enabled'] = 'Įjungta'; 
+$_['text_extension_status_help'] = 'Įgalinkite arba išjunkite mokėjimo metodą'; 
+$_['text_insert_amount'] = 'Įveskite grąžinamą sumą. Daugiausia: %s %s:';
+$_['text_loading'] = 'Įkeliami duomenys... Palaukite...';
+$_['text_loading_short'] = 'Prašome palaukti...';
+$_['text_local_cron'] = '1 metodas – CRON užduotis:';
+$_['text_location_error'] = 'Bandant sinchronizuoti vietas ir prieigos raktą įvyko klaida: %s';
+$_['text_location_help'] = 'Pasirinkite, kuri sukonfigūruota aikštės vieta bus naudojama operacijoms. Turi būti įjungtos kortelės apdorojimo galimybės.';
+$_['text_location_label'] = 'Vieta';
+$_['text_manage'] = 'Operacija kredito kortele (kvadratas)';
+$_['text_manage_tooltip'] = 'Žr. išsamią informaciją / Užfiksuoti / Anuliuoti / Grąžinti pinigus';
+$_['text_merchant_info_section_heading'] = 'Bloga informacija';
+$_['text_merchant_name_label'] = 'Prekybininko pavadinimas';
+$_['text_merchant_name_placeholder'] = 'Ne sąranka';
+$_['text_no_appropriate_locations_warning'] = '„Square“ paskyroje nėra vietų, kuriose būtų galima nustatyti kortelių apdorojimą internetu.';
+$_['text_no_location_selected_warning'] = 'Nėra pasirinktos vietos.';
+$_['text_no_locations_label'] = 'Nėra galiojančių vietų';
+$_['text_no_transactions'] = 'Dar nebuvo užregistruota jokių operacijų.';
+$_['text_not_connected'] = 'Neprisijungęs';
+$_['text_not_connected_info'] = 'Paspaudę šį mygtuką prijungsite šį modulį prie savo Square paskyros ir suaktyvinsite paslaugą.';
+$_['text_notification_ssl'] = 'Įsitikinkite, kad atsiskaitymo puslapyje įgalintas SSL. Priešingu atveju plėtinys neveiks.';
+$_['text_notify_recurring_fail'] = 'Pasikartojanti operacija nepavyko:';
+$_['text_notify_recurring_success'] = 'Sėkminga pasikartojanti operacija:';
+$_['text_ok'] = 'Gerai';
+$_['text_order_history_cancel'] = 'Administratorius atšaukė jūsų pasikartojančius mokėjimus. Jūsų kortelė nebebus apmokestinta.';
+$_['text_payment_method_name_help'] = 'Checkout mokėjimo metodo pavadinimas';
+$_['text_payment_method_name_label'] = 'Mokėjimo būdo pavadinimas';
+$_['text_payment_method_name_placeholder'] = 'Kredito / debeto kortelė';
+$_['text_recurring_info'] = 'Būtinai nustatykite kasdienę CRON užduotį naudodami vieną iš toliau nurodytų būdų. CRON darbai padeda:<br /><br />&bull; Automatinis API prieigos prieigos rakto atnaujinimas<br />&bull; Pasikartojančių operacijų apdorojimas';
+$_['text_recurring_status'] = 'Pasikartojančių mokėjimų būsena:';
+$_['text_redirect_uri_help'] = 'Įklijuokite šią nuorodą į lauką Peradresavimo URI, esantį Tvarkyti programą / oAuth';
+$_['text_redirect_uri_label'] = 'Kvadratinis OAuth peradresavimo URL';
+$_['text_refresh_access_token_success'] = 'Sėkmingai atnaujintas ryšys su jūsų „Square“ paskyra.'; 
+$_['text_refresh_token'] = 'Iš naujo sukurti prieigos raktą';
+$_['text_refund'] = 'Grąžinti pinigus';
+$_['text_refund_details'] = 'Išsami pinigų grąžinimo informacija';
+$_['text_refunded_amount'] = 'Grąžinta: %s. Grąžinimo būsena: %s. Pinigų grąžinimo priežastis: %s';
+$_['text_refunds'] = 'Grąžinamos lėšos (%s)';
+$_['text_remote_cron'] = '2 metodas – nuotolinis CRON:';
+$_['text_sale_label'] = 'Išpardavimas';
+$_['text_sandbox_access_token_help'] = 'Gaukite tai iš „Square“ puslapio Tvarkyti programą';
+$_['text_sandbox_access_token_label'] = 'Smėlio dėžės prieigos raktas';
+$_['text_sandbox_access_token_placeholder'] = 'Smėlio dėžės prieigos raktas';
+$_['text_sandbox_client_id_help'] = 'Gaukite tai iš „Square“ puslapio Tvarkyti programą';
+$_['text_sandbox_client_id_label'] = 'Smėlio dėžės programos ID';
+$_['text_sandbox_client_id_placeholder'] = 'Smėlio dėžės programos ID';
+$_['text_sandbox_disabled_label'] = 'Išjungta'; 
+$_['text_sandbox_enabled'] = 'Smėlio dėžės režimas įjungtas! Atrodo, kad operacijos bus įvykdytos, tačiau mokesčiai nebus atlikti.';
+$_['text_sandbox_enabled_label'] = 'Įjungta'; 
+$_['text_sandbox_section_heading'] = 'Kvadratinės smėlio dėžės nustatymai';
+$_['text_select_location'] = 'Pasirinkite vietą';
+$_['text_settings_section_heading'] = 'Kvadrato nustatymai';
+$_['text_squareup'] = '<a target="_BLANK" href="https://squareup.com"><img src="view/image/payment/squareup.png" alt="Kvadratas" title="Kvadratas" style="border: 1px solid #EEEEEE;" /></a>';
+$_['text_success'] = 'Sėkmė: pakeitėte „Square“ mokėjimo modulį!';
+$_['text_success_capture'] = 'Sandoris sėkmingai užfiksuotas!';
+$_['text_success_refund'] = 'Sandoris sėkmingai grąžintas!';
+$_['text_success_void'] = 'Sandoris sėkmingai anuliuotas!';
+$_['text_token_expired'] = 'Baigėsi jūsų aikštės prieigos rakto galiojimo laikas! <a href="%s">Spustelėkite čia</a>, kad atnaujintumėte dabar.';
+$_['text_token_expiry_warning'] = 'Jūsų aikštės prieigos raktas baigs galioti %s. <a href="%s">Spustelėkite čia</a>, kad atnaujintumėte dabar.';
+$_['text_token_revoked'] = 'Jūsų aikštės prieigos raktas baigėsi arba buvo atšauktas! <a href="%s">Spustelėkite čia</a>, kad iš naujo įgaliotumėte Square plėtinį.';
+$_['text_transaction_statuses'] = 'Sandorių būsenos';
+$_['text_view'] = 'Žiūrėti daugiau';
+$_['text_void'] = 'Tuščia';
+$_['text_na'] = 'N/A';
+$_['text_no_reason_provided'] = 'Priežastis nenurodyta.';
+
+// Statuses
+$_['squareup_status_comment_authorized'] = 'Kortelės operacija buvo autorizuota, bet dar neužfiksuota.';
+$_['squareup_status_comment_captured'] = 'Kortelės operacija buvo autorizuota ir vėliau užfiksuota (t. y. užbaigta).';
+$_['squareup_status_comment_voided'] = 'Kortelės operacija buvo autorizuota ir vėliau anuliuota (t. y. atšaukta).';
+$_['squareup_status_comment_failed'] = 'Operacija kortele nepavyko.';
+
+// Entry
+$_['entry_total'] = 'Iš viso';
+$_['entry_geo_zone'] = 'Geo zona';
+$_['entry_sort_order'] = 'Rūšiavimo tvarka';
+$_['entry_merchant'] = 'Prekybininko ID';
+$_['entry_transaction_id'] = 'Operacijos ID';
+$_['entry_order_id'] = 'Užsakymo ID';
+$_['entry_partner_solution_id'] = 'Partnerio sprendimo ID';
+$_['entry_type'] = 'Sandorio tipas';
+$_['entry_currency'] = 'Valiuta';
+$_['entry_amount'] = 'Suma';
+$_['entry_browser'] = 'Kliento vartotojo agentas';
+$_['entry_ip'] = 'Kliento IP';
+$_['entry_date_created'] = 'Sukūrimo data';
+$_['entry_billing_address_company'] = 'Atsiskaitymo įmonė';
+$_['entry_billing_address_street'] = 'Billing Street';
+$_['entry_billing_address_city'] = 'Atsiskaitymo miestas';
+$_['entry_billing_address_postcode'] = 'Atsiskaitymo ZIP';
+$_['entry_billing_address_province'] = 'Atsiskaitymo provincija / valstija';
+$_['entry_billing_address_country'] = 'Atsiskaitymo šalis';
+$_['entry_status_authorized'] = 'Įgaliotas';
+$_['entry_status_captured'] = 'Užfiksuota';
+$_['entry_status_voided'] = 'Anuliuota';
+$_['entry_status_failed'] = 'Nepavyko';
+$_['entry_setup_confirmation'] = 'Sąrankos patvirtinimas:';
+
+// Error
+$_['error_permission'] = '<strong>Įspėjimas:</strong> jūs neturite leidimo keisti mokėjimo aikštės!';
+$_['error_permission_recurring'] = '<strong>Įspėjimas:</strong> jūs neturite leidimo keisti pasikartojančių mokėjimų!';
+$_['error_transaction_missing'] = 'Sandoris nerastas!';
+$_['error_no_ssl'] = '<strong>Įspėjimas:</strong> SSL neįjungtas jūsų administratoriaus skydelyje. Įgalinkite jį, kad užbaigtumėte konfigūraciją.';
+$_['error_user_rejected_connect_attempt'] = 'Bandymą prisijungti atšaukė vartotojas.';
+$_['error_possible_xss'] = 'Aptikome galimą kelių svetainių ataką ir nutraukėme jūsų bandymą prisijungti. Patvirtinkite programos ID ir paslaptį ir bandykite dar kartą naudodami administratoriaus skydelio mygtukus.';
+$_['error_invalid_email'] = 'Nurodytas el. pašto adresas negalioja!';
+$_['error_cron_acknowledge'] = 'Patvirtinkite, kad nustatėte CRON užduotį.';
+$_['error_client_id'] = 'Programos kliento ID yra privalomas laukas';
+$_['error_client_secret'] = 'Programos kliento paslaptis yra privalomas laukas';
+$_['error_sandbox_client_id'] = 'Smėlio dėžės kliento ID yra privalomas laukas, kai įjungtas smėlio dėžės režimas';
+$_['error_sandbox_token'] = 'Smėlio dėžės prieigos raktas yra privalomas laukas, kai įjungtas smėlio dėžės režimas';
+$_['error_no_location_selected'] = 'Vieta yra privalomas laukas';
+$_['error_refresh_access_token']                        = "An error occurred when trying to refresh the extension's connection to your Square account. Please verify your application credentials and try again.";
+$_['error_form'] = 'Patikrinkite, ar formoje nėra klaidų, ir pabandykite išsaugoti dar kartą.';
+$_['error_token'] = 'Atnaujinant prieigos raktą įvyko klaida: %s';
+$_['error_no_refund'] = 'Lėšų grąžinimas nepavyko.';
+
+// Column
+$_['column_transaction_id'] = 'Operacijos ID';
+$_['column_order_id'] = 'Užsakymo ID';
+$_['column_customer'] = 'Klientas';
+$_['column_status'] = 'Būsena';
+$_['column_type'] = 'Tipas';
+$_['column_amount'] = 'Suma';
+$_['column_ip'] = 'IP';
+$_['column_date_created'] = 'Sukūrimo data';
+$_['column_action'] = 'Veiksmas';
+$_['column_refunds'] = 'Grąžinamos lėšos';
+$_['column_reason'] = 'Priežastis';
+$_['column_fee'] = 'Apdorojimo mokestis';
+
+// Button
+$_['button_void'] = 'Tuščia';
+$_['button_refund'] = 'Grąžinti pinigus';
+$_['button_capture'] = 'Užfiksuoti';
+$_['button_connect'] = 'Prisijunkite';
+$_['button_reconnect'] = 'Prisijunkite iš naujo';
+$_['button_refresh'] = 'Atnaujinti prieigos raktą';

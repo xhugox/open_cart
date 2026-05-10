@@ -1,0 +1,115 @@
+<?php
+// Heading
+$_['heading_title'] = 'UPS';
+
+// Text
+$_['text_extension'] = 'Plėtiniai';
+$_['text_success'] = 'Sėkmė: pakeitėte UPS pristatymą!';
+$_['text_edit'] = 'Redaguoti UPS pristatymą';
+$_['text_regular_daily_pickup'] = 'Reguliarus kasdienis atsiėmimas';
+$_['text_daily_pickup'] = 'Kasdienis atsiėmimas';
+$_['text_customer_counter'] = 'Klientų skaitiklis';
+$_['text_one_time_pickup'] = 'Vienkartinis paėmimas';
+$_['text_on_call_air_pickup'] = 'Oro paėmimas pagal iškvietimą';
+$_['text_letter_center'] = 'Laiškų centras';
+$_['text_air_service_center'] = 'Oro paslaugų centras';
+$_['text_suggested_retail_rates'] = 'Siūlomos mažmeninės kainos (UPS parduotuvė)';
+$_['text_package'] = 'Paketas';
+$_['text_ups_letter'] = 'UPS laiškas';
+$_['text_ups_tube'] = 'UPS vamzdis';
+$_['text_ups_pak'] = 'UPS Pak';
+$_['text_ups_express_box'] = 'UPS greitoji dėžutė';
+$_['text_ups_25kg_box'] = 'UPS 25kg dėžė';
+$_['text_ups_10kg_box'] = 'UPS 10kg dėžė';
+$_['text_us'] = 'JAV kilmė';
+$_['text_ca'] = 'Kanados kilmė';
+$_['text_eu'] = 'Europos Sąjungos kilmė';
+$_['text_pr'] = 'Puerto Riko kilmė';
+$_['text_mx'] = 'Meksikos kilmė';
+$_['text_other'] = 'Visos kitos kilmės';
+$_['text_test'] = 'Testas';
+$_['text_production'] = 'Gamyba';
+$_['text_residential'] = 'Gyvenamieji';
+$_['text_commercial'] = 'Komercinis';
+$_['text_next_day_air'] = '„UPS Next Day Air“.';
+$_['text_2nd_day_air'] = '„UPS Second Day Air“.';
+$_['text_ground'] = 'UPS žemė';
+$_['text_3_day_select'] = 'UPS trijų dienų pasirinkimas';
+$_['text_next_day_air_saver'] = 'UPS Kitos dienos oro taupymas';
+$_['text_next_day_air_early_am'] = '„UPS Next Day Air“ anksti ryte';
+$_['text_2nd_day_air_am'] = 'UPS Second Day Air A.M.';
+$_['text_saver'] = 'UPS taupyklė';
+$_['text_worldwide_express'] = 'UPS Worldwide Express';
+$_['text_worldwide_expedited'] = 'UPS visame pasaulyje pagreitintas';
+$_['text_standard'] = 'UPS standartas';
+$_['text_worldwide_express_plus'] = 'UPS Worldwide Express Plus';
+$_['text_express'] = 'UPS Express';
+$_['text_expedited'] = 'UPS pagreitintas';
+$_['text_express_early_am'] = 'UPS Express Early A.M.';
+$_['text_express_plus'] = 'UPS Express Plus';
+$_['text_today_standard'] = 'UPS šiandienos standartas';
+$_['text_today_dedicated_courier'] = 'UPS šiandien skirtas kurjeris';
+$_['text_today_intercity'] = 'UPS Šiandien tarpmiestinis';
+$_['text_today_express'] = 'UPS Today Express';
+$_['text_today_express_saver'] = '„UPS Today Express Saver“.';
+
+// Entry
+$_['entry_key'] = 'Prieigos raktas';
+$_['entry_username'] = 'Vartotojo vardas';
+$_['entry_password'] = 'Slaptažodis';
+$_['entry_pickup'] = 'Paėmimo būdas';
+$_['entry_packaging'] = 'Pakuotės tipas';
+$_['entry_classification'] = 'Klientų klasifikavimo kodas';
+$_['entry_origin'] = 'Siuntimo kilmės kodas';
+$_['entry_city'] = 'Kilmės miestas';
+$_['entry_state'] = 'Kilmės valstybė / provincija';
+$_['entry_country'] = 'Kilmės šalis';
+$_['entry_postcode'] = 'Kilmės pašto kodas';
+$_['entry_test'] = 'Bandymo režimas';
+$_['entry_quote_type'] = 'Citatos tipas';
+$_['entry_service'] = 'Paslaugos';
+$_['entry_insurance'] = 'Įjungti draudimą';
+$_['entry_display_weight'] = 'Rodyti pristatymo svorį';
+$_['entry_weight_class'] = 'Svorio klasė';
+$_['entry_length_class'] = 'Ilgio klasė';
+$_['entry_dimension'] = 'Matmenys (I x P x A)';
+$_['entry_length'] = 'Ilgis';
+$_['entry_height'] = 'Aukštis';
+$_['entry_width'] = 'Plotis';
+$_['entry_tax_class'] = 'Mokesčių klasė';
+$_['entry_geo_zone'] = 'Geo zona';
+$_['entry_status'] = 'Būsena';
+$_['entry_sort_order'] = 'Rūšiavimo tvarka';
+$_['entry_debug'] = 'Derinimo režimas';
+
+// Help
+$_['help_key'] = 'Įveskite UPS jums priskirtą XML tarifų prieigos raktą.';
+$_['help_username'] = 'Įveskite savo UPS paslaugų paskyros vartotojo vardą.';
+$_['help_password'] = 'Įveskite UPS paslaugų paskyros slaptažodį.';
+$_['help_pickup'] = 'Kaip duodate pakuotes UPS (naudojama tik tada, kai kilmė yra JAV)?';
+$_['help_packaging'] = 'Kokią pakuotę naudojate?';
+$_['help_classification'] = '01 - Jei atsiskaitote į UPS sąskaitą ir kasdien atsiimate UPS, 03 - Jei neturite UPS paskyros arba atsiskaitote į UPS sąskaitą, bet neturite kasdienio atsiėmimo, 04 - Jei siunčiate iš mažmeninės prekybos vietos (naudojama tik tada, kai kilmės šalis yra JAV)';
+$_['help_origin'] = 'Kokį pradžios tašką reikia naudoti (šis nustatymas turi įtakos tik tiems UPS produktų pavadinimams, kurie rodomi vartotojui)';
+$_['help_city'] = 'Įveskite kilmės miesto pavadinimą.';
+$_['help_state'] = 'Įveskite savo kilmės valstijos / provincijos dviejų raidžių kodą.';
+$_['help_country'] = 'Įveskite savo kilmės šalies dviejų raidžių kodą.';
+$_['help_postcode'] = 'Įveskite savo kilmės pašto kodą.';
+$_['help_test'] = 'Naudoti šį modulį bandymo (TAIP) arba gamybos režimu (NE)?';
+$_['help_quote_type'] = 'Pristatymo į gyvenamąją ar komercinę kainą pasiūlymas.';
+$_['help_service'] = 'Pasirinkite norimas pasiūlyti UPS paslaugas.';
+$_['help_insurance'] = 'Įgalinamas draudimas, kai bendra produkto vertė yra';
+$_['help_display_weight'] = 'Ar norite rodyti siuntos svorį? (pvz., pristatymo svoris: 2,7674 kg)';
+$_['help_weight_class'] = 'Nustatykite kilogramus arba svarus.';
+$_['help_length_class'] = 'Nustatykite centimetrus arba colius.';
+$_['help_dimension'] = 'Manoma, kad tai yra jūsų vidutinis pakuotės dėžutės dydis. Atskirų prekių matmenys šiuo metu nepalaikomi, todėl turite įvesti vidutinius matmenis, pvz., 5x5x5.';
+$_['help_debug'] = 'Išsaugo siuntimo / gavimo duomenis sistemos žurnale';
+
+// Error
+$_['error_permission'] = 'Įspėjimas: Jūs neturite leidimo keisti UPS (JAV) pristatymo!';
+$_['error_key'] = 'Reikalingas prieigos raktas!';
+$_['error_username'] = 'Reikalingas vartotojo vardas!';
+$_['error_password'] = 'Reikalingas slaptažodis!';
+$_['error_city'] = 'Kilmės miestas!';
+$_['error_state'] = 'Būtina kilmės valstybė / provincija!';
+$_['error_country'] = 'Būtina kilmės šalis!';
+$_['error_dimension'] = 'Reikalingi vidutiniai matmenys!';

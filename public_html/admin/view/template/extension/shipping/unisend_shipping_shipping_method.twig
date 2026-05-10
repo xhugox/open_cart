@@ -1,0 +1,178 @@
+{{ header }}{{ column_left }}
+<div id="content">
+	<div class="page-header">
+		<div class="container-fluid">
+			<div class="pull-right">
+				<button type="submit" form="form-shipping" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary">
+					<i class="fa fa-save"></i>
+				</button>
+				<a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default">
+					<i class="fa fa-reply"></i>
+				</a>
+				{% if editedShippingMethod is not null %}
+					  <button type="button" form="form-shipping" data-toggle="tooltip" title="{{ button_delete }}" class="btn btn-danger" onclick="confirm('{{ text_confirm }}') ? deleteShippingMethod('{{delete}}'): false;"><i class="fa fa-trash-o"></i></button>
+                {% endif %}
+			</div>
+			<h1>{{ heading_title }}</h1>
+			<ul class="breadcrumb">
+				{% for breadcrumb in breadcrumbs %}
+					<li>
+						<a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<div class="container-fluid">
+		{% if error_warning %}
+			<div class="alert alert-danger alert-dismissible">
+				<i class="fa fa-exclamation-circle"></i>
+				{{ error_warning }}
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			</div>
+		{% endif %}
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<i class="fa fa-pencil"></i>
+					{{ text_edit }}</h3>
+			</div>
+			<div class="panel-body">
+				<form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-shipping" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-shipping_unisend_shipping_method_name">
+							{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_name}}
+						</label>
+						<div class="col-sm-10">
+							<input type="text" name="unisend_shipping_method_name" value="{{ unisend_shipping_method_name }}" id="input-shipping_unisend_shipping_method_name" class="form-control"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-shipping_unisend_shipping_method_plan_code">
+							{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_plan_code}}
+						</label>
+						<div class="col-sm-10">
+							<select id="input-shipping_unisend_shipping_method_plan_code" name="unisend_shipping_method_plan_code" class="form-control">
+								{% for shippingPlan in shippingPlans %}
+								    {% if shippingPlan.code == unisend_shipping_method_plan_code %}
+									   <option value="{{shippingPlan.code}}" selected="selected">{{ shippingPlan.name }}</option>
+                                    {% else %}
+                                       <option value="{{shippingPlan.code}}">{{ shippingPlan.name }}</option>
+                                    {% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-shipping_unisend_shipping_method_parcel_type">
+							{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_parcel_type}}
+						</label>
+						<div class="col-sm-10">
+							<select id="input-shipping_unisend_shipping_method_parcel_type" name="unisend_shipping_method_parcel_type" class="form-control">
+								{% for parcelType in parcelTypes.shipping %}									
+								    {% if parcelType.parcelType == unisend_shipping_method_parcel_type %}
+									   <option value="{{parcelType.parcelType}}" selected="selected">{{ parcelType.name }}</option>
+                                    {% else %}
+                                       <option value="{{parcelType.parcelType}}">{{ parcelType.name }}</option>
+                                    {% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-shipping_unisend_shipping_method_rate_type">
+							{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_rate_type}}
+						</label>
+						<div class="col-sm-10">
+							<select id="input-shipping_unisend_shipping_method_rate_type" name="unisend_shipping_method_rate_type" class="form-control">
+								{% for rateType in rateTypes %}									
+								    {% if rateType == unisend_shipping_method_rate_type %}
+									   <option id="{{rateType.code}}" value="{{rateType.code}}" selected="selected">{{ rateType.name }}</option>
+                                    {% else %}
+                                       <option id="{{rateType.code}}" value="{{rateType.code}}">{{ rateType.name }}</option>
+                                    {% endif %}
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<div class="form-group rate-type-size">
+						<label class="col-sm-2 control-label" for="input-shipping_unisend_shipping_method_sizes">
+							{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_parcel_size}}
+						</label>
+						<div class="col-sm-10">
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<td class="text-left">{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_size }}</td>
+											<td class="text-left">{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_price }}</td>
+										</tr>
+									</thead>
+									<tbody class="parcel-type-sizes"></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="form-group rate-type-weight">
+						<label class="col-sm-2 control-label" for="input-shipping_unisend_shipping_method_weight">
+							{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_parcel_weight}}
+						</label>
+						<div class="col-sm-10">
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<td class="text-left">{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_parcel_weight_size_from}}</td>
+											<td class="text-left">{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_parcel_weight_size_to }}</td>
+											<td class="text-left" colspan="3">{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_parcel_weight_size_price }}</td>
+										</tr>
+									</thead>
+									<tbody class="parcel-type-weights"></tbody>
+									<tfoot>
+										<tr>
+											<td colspan="3"></td>
+											<td class="text-right">
+												<button type="button" onclick="addSize();" data-toggle="tooltip" title="{{ button_attribute_add }}" class="btn btn-primary">
+													<i class="fa fa-plus-circle"></i>
+												</button>
+											</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-shipping_unisend_shipping_method_free_shipping_from">
+							{{ text_shipping_unisend_shipping_shipping_method_free_shipping_from}}
+						</label>
+						<div class="col-sm-10">
+							<input type="text" name="unisend_shipping_method_free_shipping_from" value="{{ unisend_shipping_method_free_shipping_from}}" id="input-shipping_unisend_shipping_method_free_shipping_from" class="form-control"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label" for="input-shipping_unisend_shipping_method_country">
+							{{ text_shipping_unisend_shipping_settings_tab_shipping_methods_country}}
+						</label>
+						<div class="col-sm-10">
+							<input type="text" name="product" value="" id="input-shipping_unisend_shipping_method_country" class="form-control"/>
+							<div id="method_country" class="well well-sm" style="height: 150px; overflow: auto;"></div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	const shippingPlans = {{ shippingPlans|json_encode }};
+    const editedShippingMethod = {{ editedShippingMethod|json_encode }};
+	const editedShippingMethodSizes = {{ sizes|json_encode }};
+	const editedShippingMethodWeights = {{ weights|json_encode }};
+	const editedShippingMethodCountries = {{ countries|json_encode }};
+    const userTokenParam = '{{ userTokenParam }}';
+	const textButtonRemove = '{{ button_remove }}';
+
+</script>
+<script src="view/javascript/unisend_shipping/unisend-shipping-shipping-method.js"></script>
+{{ footer }}

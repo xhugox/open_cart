@@ -1,0 +1,645 @@
+2025-11-30 21:40:23 - MOD: Modification Default
+
+FILE: system/engine/action.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 69
+
+FILE: system/engine/loader.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 77
+LINE: 151
+LINE: 168
+
+FILE: system/library/config.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 59
+
+FILE: system/library/language.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 67
+LINE: 73
+
+FILE: system/library/template/template.php
+REGEX: ~(require|include)(_once)?\(([^)]+)~
+LINE: 18
+
+FILE: system/library/template/twig.php
+CODE: if (is_file($file)) {
+LINE: 13
+----------------------------------------------------------------
+MOD: Omniva Base Mod for OC3
+
+FILE: admin/controller/common/column_left.php
+CODE: $marketplace = array();
+LINE: 168
+
+FILE: admin/view/template/sale/order_list.twig
+CODE: {{ footer }}
+LINE: 300
+CODE: var filter_date_modified
+LINE: 195
+
+FILE: admin/controller/sale/order.php
+CODE: $this->response->setOutput($this->load->view('sale/order_info', $data));
+LINE: 1289
+CODE: protected function getList()
+LINE: 94
+CODE: $url = '';
+LINE: 48
+LINE: 169
+LINE: 291
+LINE: 345
+LINE: 449
+LINE: 805
+CODE: $order_total = $this->model_sale_order->getTotalOrders($filter_data);
+LINE: 249
+CODE: $this->response->setOutput($this->load->view('sale/order_list', $data));
+LINE: 448
+
+FILE: admin/model/sale/order.php
+CODE: if (!empty($data['filter_total']))
+LINE: 193
+LINE: 309
+LINE: 422
+
+FILE: admin/view/template/sale/order_info.twig
+CODE: {{ footer }}
+LINE: 591
+
+FILE: catalog/controller/checkout/checkout.php
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
+LINE: 44
+
+FILE: catalog/controller/checkout/shipping_method.php
+CODE: $this->response->setOutput($this->load->view('checkout/shipping_method', $data));
+LINE: 91
+CODE: public function save()
+LINE: 104
+
+FILE: catalog/view/theme/default/template/checkout/shipping_method.twig
+CODE: {% if shipping_methods %}
+LINE: 15
+CODE: {% for quote in shipping_method.quote %}
+LINE: 30
+----------------------------------------------------------------
+MOD: Hide Account menu iF not logged
+
+FILE: catalog/controller/extension/module/account.php
+CODE: function index() {
+LINE: 4
+
+FILE: catalog/controller/common/column_right.php
+CODE: $data['modules'][] = $this->load->controller('module/' . $part[0]);
+NOT FOUND - OPERATIONS ABORTED!
+----------------------------------------------------------------
+MOD: Klix
+
+FILE: catalog/view/theme/default/template/product/product.twig
+CODE: <input type="hidden" name="product_id" value="{{ product_id }}" />
+LINE: 287
+CODE: <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button>
+LINE: 294
+
+FILE: catalog/controller/product/product.php
+CODE: $data['model'] = $product_info['model'];
+LINE: 272
+
+FILE: catalog/controller/checkout/cart.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 251
+LINE: 277
+
+FILE: catalog/view/theme/default/template/checkout/cart.twig
+CODE: <a href="{{ checkout }}" class="btn btn-primary">{{ button_checkout }}</a>
+LINE: 123
+
+FILE: (sub modification) catalog/controller/checkout/checkout.php
+CODE: $data['header'] = $this->load->controller('common/header');
+LINE: 115
+
+FILE: catalog/view/theme/default/template/checkout/checkout.twig
+CODE: <div class="panel-group" id="accordion">
+LINE: 34
+
+FILE: (sub modification) admin/model/sale/order.php
+CODE: 'reward'                  => $reward,
+LINE: 128
+
+FILE: (sub modification) admin/controller/sale/order.php
+CODE: $data['text_order'] = sprintf($this->language->get('text_order'), $this->request->get['order_id']);
+LINE: 823
+
+FILE: (sub modification) admin/view/template/sale/order_info.twig
+CODE: <table class="table table-bordered">
+LINE: 179
+
+FILE: catalog/view/theme/default/template/common/header.twig
+CODE: <head>
+LINE: 12
+----------------------------------------------------------------
+MOD: Modification Manager
+
+FILE: admin/controller/marketplace/modification.php
+CODE: protected function validate(
+LINE: 1367
+CODE: $results = $this->model_setting_modification->getModifications();
+LINE: 125
+CODE: $this->load->model('setting/modification');
+LINE: 18
+LINE: 32
+LINE: 70
+LINE: 480
+LINE: 551
+LINE: 587
+LINE: 623
+CODE: $this->getList();
+LINE: 24
+LINE: 66
+LINE: 480
+LINE: 555
+LINE: 595
+LINE: 635
+LINE: 677
+CODE: $sort = 'name';
+LINE: 684
+CODE: $order = 'ASC';
+LINE: 690
+CODE: $handle = fopen(DIR_LOGS . 'ocmod.log', 'w+');
+LINE: 652
+CODE: $maintenance = $this->config->get('config_maintenance');
+LINE: 111
+CODE: $data['breadcrumbs'] = array();
+LINE: 784
+CODE: $data['sort_name'] =
+LINE: 875
+CODE: $filter_data = array(
+LINE: 805
+CODE: $modification_total = $this->model_setting_modification->getTotalModifications();
+LINE: 812
+CODE: $data['modifications'][] = array(
+LINE: 824
+CODE: $pagination =
+LINE: 912
+CODE: $data['clear_log'] =
+LINE: 805
+CODE: $this->load->view('marketplace/modification'
+LINE: 977
+CODE: $this->response->redirect($this->url->link(!empty($data['redirect']) ? $data['redirect'] : 'marketplace/modification'
+LINE: 512
+CODE: $this->response->redirect($this->url->link(!empty($data['redirect']) ? $data['redirect'] : 'marketplace/modification'
+LINE: 512
+CODE: if ($this->validate()) {
+LINE: 105
+CODE: $log[] = 'MOD:
+LINE: 229
+CODE: $operations = $file->getElementsByTagName('operation');
+LINE: 244
+CODE: $files = glob($path, GLOB_BRACE);
+LINE: 273
+CODE: if (!$status) {
+LINE: 466
+CODE: $ocmod->write(implode("\n", $log));
+LINE: 505
+CODE: $this->load->language('marketplace/modification');
+LINE: 11
+LINE: 30
+LINE: 73
+LINE: 576
+LINE: 652
+LINE: 693
+LINE: 734
+LINE: 1048
+LINE: 1182
+LINE: 1228
+CODE: $this->model_setting_modification->
+LINE: 42
+LINE: 209
+LINE: 663
+LINE: 704
+LINE: 918
+LINE: 921
+----------------------------------------------------------------
+MOD: Related / Dependent options
+
+FILE: admin/controller/catalog/option.php
+CODE: 'limit'       => 5
+LINE: 434
+
+FILE: admin/controller/catalog/product.php
+CODE: 'required'             => $product_option['required']
+LINE: 988
+CODE: 'required'             => $product_option['required']
+LINE: 1322
+CODE: 'weight_prefix'           => $product_option_value['weight_prefix']
+LINE: 975
+CODE: if (isset($this->error['warning'])) {
+LINE: 387
+LINE: 513
+CODE: if (isset($product_option['product_option_value'])) {
+LINE: 996
+CODE: $data['option_values'] = array();
+LINE: 1055
+CODE: $this->response->setOutput($this->load->view('catalog/product_form', $data));
+LINE: 1250
+CODE: $this->load->model('design/layout');
+LINE: 1240
+CODE: public function autocomplete() {
+LINE: 1526
+
+FILE: admin/model/catalog/product.php
+CODE: $product_option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value ov ON(pov.option_value_id = ov.option_value_id) WHERE pov.product_option_id = '" . (int)$product_option['product_option_id'] . "' ORDER BY ov.sort_order ASC");
+LINE: 509
+CODE: $product_option_id = $this->db->getLastId();
+LINE: 47
+LINE: 196
+CODE: value = '" . $this->db->escape($product_option['value']) . "', required = '" . (int)$product_option['required'] . "'");
+LINE: 60
+LINE: 215
+CODE: "', weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'");
+LINE: 65
+CODE: "', weight_prefix = '" . $this->db->escape($product_option_value['weight_prefix']) . "'");
+LINE: 229
+CODE: if (isset($data['product_recurring'])) {
+LINE: 113
+CODE: => $product_option['required']
+LINE: 623
+CODE: 'weight_prefix'           => $product_option_value['weight_prefix']
+LINE: 610
+CODE: public function getProductImages($product_id)
+LINE: 740
+
+FILE: admin/view/template/catalog/product_form.twig
+CODE: {% if product_option.type == 'text' %}
+LINE: 547
+CODE: {% if product_option.type == 'text' %}
+LINE: 570
+CODE: {% if product_option.type == 'textarea' %}
+LINE: 601
+CODE: {% if product_option.type == 'file' %}
+LINE: 632
+CODE: {% if product_option.type == 'date' %}
+LINE: 663
+CODE: {% if product_option.type == 'time' %}
+LINE: 697
+CODE: {% if product_option.type == 'datetime' %}
+LINE: 731
+CODE: <td class="text-right">{{ entry_weight }}</td>
+LINE: 757
+CODE: <td colspan="6"></td>
+LINE: 916
+CODE: html += '        <td colspan="6"></td>';
+LINE: 1587
+REGEX: ~(<input type="text" name="product_option\[{{ option_row }}]\[product_option_value]\[{{ option_value_row }}]\[weight]" value="{{ product_option_value\.weight }}" placeholder="{{ entry_weight }}" class="form-control" ?\/><\/td>)~
+LINE: 908
+CODE: <select id="option-values{{ option_row }}" style="display: none;">
+LINE: 952
+CODE: if (item['type'] == 'text') {
+LINE: 1581
+CODE: html += '        <td class="text-right">{{ entry_weight }}</td>';
+LINE: 1638
+REGEX: ~(html  ?= '<div class="tab-pane" id="tab-option' \+ option_row \+ '">';)~
+LINE: 1544
+CODE: html += '  <input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][weight]" value="" placeholder="{{ entry_weight }}" class="form-control" /></td>';
+LINE: 1736
+CODE: <li><a href="#tab-option{{ option_row }}" data-toggle="tab"><i class="fa fa-minus-circle" onclick="$('a[href=\'#tab-option{{ option_row }}\']').parent().remove(); $('#tab-option{{ option_row }}').remove(); $('#option a:first').tab('show');"></i> {{ product_option.name }}</a></li>
+LINE: 483
+CODE: onclick="$(this).tooltip('destroy');$('#option-value-row{{ option_value_row }}').remove();"
+LINE: 927
+CODE: onclick=" $(\'#option a:first\').tab(\'show\');$(\'a[href=\\\'#tab-option' + option_row + '\\\']\').parent().remove(); $(\'#tab-option' + option_row + '\').remove();"
+LINE: 1668
+CODE: onclick="$(this).tooltip(\'destroy\');$(\'#option-value-row' + option_value_row + '\').remove();"
+LINE: 1737
+CODE: $('[rel=tooltip]').tooltip();
+LINE: 1745
+CODE: var option_value_row = {{ option_value_row }};
+LINE: 1815
+CODE: option_value_row++;
+LINE: 1869
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: 'required'             => $option['required']
+LINE: 377
+CODE: 'price_prefix'            => $option_value['price_prefix']
+LINE: 365
+CODE: foreach ($this->model_catalog_product->getProductOptions($this->request->get['product_id']) as $option) {
+LINE: 348
+CODE: if ($product_info['minimum']) {
+LINE: 410
+CODE: $product_option_value_data = array();
+LINE: 376
+CODE: $data['options'][] = array(
+LINE: 407
+CODE: $this->document->addStyle('catalog/view/javascript/jquery/datetimepicker/bootstrap-datetimepicker.min.css');
+LINE: 246
+CODE: $this->model_catalog_product->updateViewed($this->request->get['product_id']);
+LINE: 578
+
+FILE: catalog/model/catalog/product.php
+CODE: 'weight_prefix'           => $product_option_value['weight_prefix']
+LINE: 364
+CODE: 'required'             => $product_option['required']
+LINE: 380
+CODE: foreach ($product_option_query->rows as $product_option) {
+LINE: 348
+CODE: return $product_option_data;
+LINE: 407
+
+FILE: (sub modification) catalog/controller/checkout/cart.php
+CODE: if ($product_option['required'] && empty($option[$product_option['product_option_id']])) {
+LINE: 380
+
+FILE: (sub modification) catalog/view/theme/default/template/product/product.twig
+CODE: <div id="content" class="{{ class }}">{{ content_top }}
+LINE: 15
+CODE: {% if options %}
+LINE: 170
+CODE: {% if recurrings %}
+LINE: 275
+CODE: <h2>{{ price }}</h2>
+LINE: 141
+CODE: <h2>{{ special }}</h2>
+LINE: 150
+CODE: {{ price }}
+LINE: 148
+REGEX: ~(<div.+class="[^"]+option\.required[^"]+)("[^>]*)(>)~
+LINE: 188
+LINE: 202
+LINE: 218
+LINE: 234
+LINE: 240
+LINE: 246
+LINE: 253
+LINE: 263
+LINE: 273
+REGEX: ~(<option.*value="[^"]+option_value\.product_option_value_id[^"]+"[^>]*)(>)~
+LINE: 194
+REGEX: ~(<input type="(radio|checkbox)".*name="option[^"]+"[^\/>]+)(\/?>)~
+LINE: 210
+LINE: 227
+REGEX: ~(<textarea.*name="option[^"]+"[^>]+)(>)~
+LINE: 250
+REGEX: ~(<button.*id="button-upload[^"]+option\.product_option_id[^"]+"[^>]*)(>)~
+LINE: 258
+REGEX: ~(<input type="(text)".*name="option[^"]+"[^\/>]+)(\/?>)~
+LINE: 243
+LINE: 268
+LINE: 279
+LINE: 290
+CODE: <label>
+LINE: 208
+LINE: 226
+CODE: {{ footer }}
+LINE: 998
+----------------------------------------------------------------
+MOD: Remove Add to Cart when product quantity is 0
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: if ($product_info['quantity'] <= 0) {
+LINE: 291
+
+FILE: (sub modification) catalog/view/theme/default/template/product/product.twig
+CODE: <button type="button" id="button-cart" data-loading-text="{{ text_loading }}" class="btn btn-primary btn-lg btn-block">{{ button_cart }}</button>
+LINE: 340
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span> <i class="fa fa-shopping-cart"></i></button>
+LINE: 393
+
+FILE: catalog/controller/extension/module/latest.php
+CODE: $data['products'][] = array(
+LINE: 55
+CODE: $data['products'][] = array(
+LINE: 59
+
+FILE: catalog/controller/extension/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 55
+CODE: $data['products'][] = array(
+LINE: 59
+
+FILE: catalog/controller/extension/module/special.php
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: $data['products'][] = array(
+LINE: 66
+
+FILE: catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 62
+CODE: $data['products'][] = array(
+LINE: 66
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['products'][] = array(
+LINE: 535
+CODE: $data['products'][] = array(
+LINE: 539
+
+FILE: catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 205
+CODE: $data['products'][] = array(
+LINE: 209
+
+FILE: catalog/controller/product/special.php
+CODE: $data['products'][] = array(
+LINE: 123
+CODE: $data['products'][] = array(
+LINE: 127
+
+FILE: catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 231
+CODE: $data['products'][] = array(
+LINE: 235
+
+FILE: catalog/controller/product/compare.php
+CODE: $data['products'][] = array(
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/controller/product/manufacturer.php
+CODE: $data['products'][] = array(
+LINE: 194
+CODE: $data['products'][] = array(
+LINE: 198
+
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 20
+
+FILE: (sub modification) catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 34
+
+FILE: catalog/view/theme/default/template/extension/module/special.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 20
+
+FILE: catalog/view/theme/default/template/product/category.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 111
+
+FILE: catalog/view/theme/default/template/product/special.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 79
+
+FILE: catalog/view/theme/default/template/product/search.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 145
+
+FILE: catalog/view/theme/default/template/product/compare.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+NOT FOUND - OPERATIONS ABORTED!
+
+FILE: catalog/view/theme/default/template/product/manufacturer_info.twig
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+LINE: 78
+----------------------------------------------------------------
+MOD: Remove Opencart Ads
+
+FILE: admin/controller/extension/extension/promotion.php
+CODE: public function index() {
+LINE: 3
+----------------------------------------------------------------
+MOD: SEO Friendly URLs
+
+FILE: (sub modification) admin/controller/common/column_left.php
+CODE: if ($this->user->hasPermission('access', 'tool/log'))
+LINE: 647
+
+FILE: catalog/controller/startup/seo_url.php
+CODE: if ($query->row['query'] && $url[0] != 'information_id' && $url[0] != 'manufacturer_id' && $url[0] != 'category_id' && $url[0] != 'product_id')
+LINE: 43
+CODE: } elseif ($key == 'path') {
+LINE: 104
+----------------------------------------------------------------
+MOD: XD Stickers for Opencart 3.x
+
+FILE: (sub modification) admin/model/catalog/product.php
+CODE: $this->cache->delete('product');
+LINE: 206
+LINE: 402
+LINE: 469
+
+FILE: (sub modification) admin/controller/catalog/product.php
+CODE: $data['layouts'] = $this->model_design_layout->getLayouts();
+LINE: 1266
+
+FILE: (sub modification) admin/view/template/catalog/product_form.twig
+CODE: <li><a href="#tab-design" data-toggle="tab">{{ tab_design }}</a></li>
+LINE: 43
+CODE: <div class="tab-pane" id="tab-design">
+LINE: 1300
+
+FILE: catalog/controller/common/header.php
+CODE: public function index() {
+LINE: 72
+
+FILE: (sub modification) catalog/view/theme/default/template/common/header.twig
+CODE: </head>
+LINE: 60
+
+FILE: (sub modification) catalog/model/catalog/product.php
+CODE: 'stock_status'     => $query->row['stock_status'],
+LINE: 30
+
+FILE: (sub modification) catalog/controller/product/product.php
+CODE: $data['products'] = array();
+LINE: 586
+CODE: $data['products'][] = array(
+LINE: 720
+CODE: $data['products'][] = array(
+LINE: 723
+
+FILE: (sub modification) catalog/view/theme/default/template/product/product.twig
+CODE: <div class="{{ class }}"> {% if thumb or images %}
+LINE: 38
+CODE: <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a>
+LINE: 403
+
+FILE: (sub modification) catalog/controller/product/category.php
+CODE: $data['products'][] = array(
+LINE: 299
+CODE: $data['products'][] = array(
+LINE: 302
+
+FILE: (sub modification) catalog/controller/product/manufacturer.php
+CODE: $data['products'][] = array(
+LINE: 288
+CODE: $data['products'][] = array(
+LINE: 291
+
+FILE: (sub modification) catalog/controller/product/special.php
+CODE: $data['products'][] = array(
+LINE: 217
+CODE: $data['products'][] = array(
+LINE: 220
+
+FILE: (sub modification) catalog/controller/product/search.php
+CODE: $data['products'][] = array(
+LINE: 325
+CODE: $data['products'][] = array(
+LINE: 328
+
+FILE: (sub modification) catalog/view/theme/default/template/product/category.twig
+CODE: <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+LINE: 107
+
+FILE: (sub modification) catalog/view/theme/default/template/product/manufacturer_info.twig
+CODE: <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+LINE: 73
+
+FILE: (sub modification) catalog/view/theme/default/template/product/special.twig
+CODE: <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+LINE: 73
+
+FILE: (sub modification) catalog/view/theme/default/template/product/search.twig
+CODE: <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+LINE: 128
+
+FILE: (sub modification) catalog/controller/extension/module/bestseller.php
+CODE: $data['products'][] = array(
+LINE: 149
+CODE: $data['products'][] = array(
+LINE: 152
+
+FILE: (sub modification) catalog/controller/extension/module/latest.php
+CODE: $data['products'][] = array(
+LINE: 149
+CODE: $data['products'][] = array(
+LINE: 152
+
+FILE: (sub modification) catalog/controller/extension/module/special.php
+CODE: $data['products'][] = array(
+LINE: 156
+CODE: $data['products'][] = array(
+LINE: 159
+
+FILE: (sub modification) catalog/controller/extension/module/featured.php
+CODE: $data['products'][] = array(
+LINE: 156
+CODE: $data['products'][] = array(
+LINE: 159
+
+FILE: (sub modification) catalog/view/theme/default/template/extension/module/bestseller.twig
+CODE: <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+LINE: 18
+
+FILE: (sub modification) catalog/view/theme/default/template/extension/module/latest.twig
+CODE: <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+LINE: 17
+
+FILE: (sub modification) catalog/view/theme/default/template/extension/module/special.twig
+CODE: <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+LINE: 17
+
+FILE: (sub modification) catalog/view/theme/default/template/extension/module/featured.twig
+CODE: <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" />
+LINE: 18
+----------------------------------------------------------------

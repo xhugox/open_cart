@@ -1,0 +1,36 @@
+2025-11-30 21:40:23 - ----------------------------------------------------------------
+MOD: Omniva Base Mod for OC3
+MISSING FILE!
+/home/admin/web/xn--skrynel-z8a.lt/public_html/catalog/controller/journal3/checkout.php
+----------------------------------------------------------------
+MOD: Omniva Base Mod for OC3
+MISSING FILE!
+/home/admin/web/xn--skrynel-z8a.lt/public_html/catalog/controller/extension/quickcheckout/checkout.php
+----------------------------------------------------------------
+MOD: Hide Account menu iF not logged
+MISSING FILE!
+/home/admin/web/xn--skrynel-z8a.lt/public_html/catalog/controller/module/account.php
+
+
+MOD: Hide Account menu iF not logged
+NOT FOUND!
+CODE: $data['modules'][] = $this->load->controller('module/' . $part[0]);
+FILE: catalog/controller/common/column_right.php
+
+
+MOD: Remove Add to Cart when product quantity is 0
+NOT FOUND!
+CODE: $data['products'][] = array(
+FILE: catalog/controller/product/compare.php
+
+
+MOD: Remove Add to Cart when product quantity is 0
+NOT FOUND!
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+FILE: catalog/view/theme/default/template/extension/module/featured.twig
+
+
+MOD: Remove Add to Cart when product quantity is 0
+NOT FOUND!
+CODE: <button type="button" onclick="cart.add('{{ product.product_id }}', '{{ product.minimum }}');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
+FILE: catalog/view/theme/default/template/product/compare.twig
